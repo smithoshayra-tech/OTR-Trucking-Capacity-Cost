@@ -1,0 +1,197 @@
+{
+  "adf_p": {
+    "ppi_trucking_gf": 0.909,
+    "ppi_trk_yoy": 0.497,
+    "diesel_yoy": 0.299,
+    "ppi_mom": 0.0,
+    "diesel_mom": 0.002
+  },
+  "yoy_corr": 0.905,
+  "passthrough": {
+    "coef": {
+      "const": 0.3059,
+      "diesel_l0": 0.1311,
+      "diesel_l1": 0.0743,
+      "diesel_l2": 0.0143
+    },
+    "p": {
+      "const": 0.078,
+      "diesel_l0": 0.0,
+      "diesel_l1": 0.0892,
+      "diesel_l2": 0.5302
+    },
+    "sum_lags": 0.2197,
+    "r2": 0.266,
+    "n": 89,
+    "sum_ci95": [
+      0.1643,
+      0.2752
+    ]
+  },
+  "passthrough_subperiods": {
+    "2019-04..2021-12": {
+      "n": 33,
+      "slope": 0.096,
+      "r2": 0.393
+    },
+    "2022-01..2023-12": {
+      "n": 24,
+      "slope": 0.067,
+      "r2": 0.206
+    },
+    "2024-01..2026-08": {
+      "n": 32,
+      "slope": 0.072,
+      "r2": 0.172
+    }
+  },
+  "oos_expanding_window": {
+    "h0": {
+      "naive": {
+        "n": 32,
+        "mae": 1.968,
+        "rmse": 2.48
+      },
+      "fuel": {
+        "n": 32,
+        "mae": 1.778,
+        "rmse": 2.182,
+        "rmse_gain_vs_naive_pct": 12.0
+      },
+      "fuel_capacity": {
+        "n": 32,
+        "mae": 1.766,
+        "rmse": 2.198,
+        "rmse_gain_vs_naive_pct": 11.4
+      }
+    },
+    "h1": {
+      "naive": {
+        "n": 31,
+        "mae": 2.014,
+        "rmse": 2.519
+      },
+      "fuel": {
+        "n": 31,
+        "mae": 2.019,
+        "rmse": 2.427,
+        "rmse_gain_vs_naive_pct": 3.7
+      },
+      "fuel_capacity": {
+        "n": 31,
+        "mae": 2.036,
+        "rmse": 2.44,
+        "rmse_gain_vs_naive_pct": 3.1
+      }
+    },
+    "h3": {
+      "naive": {
+        "n": 29,
+        "mae": 2.067,
+        "rmse": 2.57
+      },
+      "fuel": {
+        "n": 29,
+        "mae": 2.143,
+        "rmse": 2.634,
+        "rmse_gain_vs_naive_pct": -2.5
+      },
+      "fuel_capacity": {
+        "n": 29,
+        "mae": 2.012,
+        "rmse": 2.559,
+        "rmse_gain_vs_naive_pct": 0.4
+      }
+    }
+  },
+  "capacity_nested_F": {
+    "F": 1.2,
+    "p": 0.317,
+    "r2_fuel": 0.266,
+    "r2_fuel_capacity": 0.297,
+    "n": 89
+  },
+  "spot_validation": {
+    "n_months": 65,
+    "corr_levels": 0.223,
+    "corr_mom": 0.202,
+    "corr_yoy": 0.269
+  },
+  "shock_events": [
+    {
+      "month": "2022-03",
+      "diesel_mom_pct": 26.6,
+      "ppi_change_to_t_plus_1_pct": 4.27,
+      "ppi_change_to_t_plus_3_pct": 4.27
+    },
+    {
+      "month": "2026-03",
+      "diesel_mom_pct": 32.2,
+      "ppi_change_to_t_plus_1_pct": 9.77,
+      "ppi_change_to_t_plus_3_pct": 9.61
+    }
+  ],
+  "shock_predicted_3m_pct": [
+    5.84,
+    7.07
+  ],
+  "capacity": {
+    "truck_emp_peak_month": "2022-10",
+    "truck_emp_peak_k": 1588.6,
+    "truck_emp_latest_month": "2026-08",
+    "truck_emp_latest_k": 1470.5,
+    "new_carriers_2023_avg": 8181,
+    "new_carriers_2025_avg": 12276,
+    "freight_per_trucker_2019_avg": 0.0898,
+    "freight_per_trucker_latest": 0.0925
+  },
+  "scenario_per_10pct_diesel": {
+    "expected_ppi_pct_3m": 2.2,
+    "ci95_pct_3m": [
+      1.64,
+      2.75
+    ],
+    "monthly_resid_sd_pct": 1.86
+  },
+  "planning_estimate": {
+    "last_published_month": "2026-08",
+    "last_published_ppi": 227.62,
+    "assumption": "diesel stays at the latest weekly price ($6.179) through November",
+    "months": [
+      {
+        "month": "2026-09",
+        "diesel_avg_usd_gal": 6.291,
+        "diesel_mom_pct": 15.2,
+        "model_ppi_mom_pct": 3.04,
+        "ppi_index_estimate": 234.5,
+        "approx_95pct_range": [
+          226.2,
+          242.8
+        ]
+      },
+      {
+        "month": "2026-10",
+        "diesel_avg_usd_gal": 6.189,
+        "diesel_mom_pct": -1.6,
+        "model_ppi_mom_pct": 1.37,
+        "ppi_index_estimate": 237.7,
+        "approx_95pct_range": [
+          226.0,
+          249.5
+        ]
+      },
+      {
+        "month": "2026-11",
+        "diesel_avg_usd_gal": 6.179,
+        "diesel_mom_pct": -0.2,
+        "model_ppi_mom_pct": 0.38,
+        "ppi_index_estimate": 238.6,
+        "approx_95pct_range": [
+          224.3,
+          253.0
+        ]
+      }
+    ],
+    "cumulative_pct_vs_aug": 4.84
+  }
+}

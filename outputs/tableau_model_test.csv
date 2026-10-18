@@ -1,0 +1,13 @@
+horizon,model,rmse,mae
+"Same month
+(nowcast)",Average only,2.48,1.968
+"Same month
+(nowcast)",Fuel-based,2.182,1.778
+"Same month
+(nowcast)",Fuel + capacity,2.198,1.766
+1 month ahead,Average only,2.519,2.014
+1 month ahead,Fuel-based,2.427,2.019
+1 month ahead,Fuel + capacity,2.44,2.036
+3 months ahead,Average only,2.57,2.067
+3 months ahead,Fuel-based,2.634,2.143
+3 months ahead,Fuel + capacity,2.559,2.012
