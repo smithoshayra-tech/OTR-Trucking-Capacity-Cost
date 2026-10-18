@@ -15,6 +15,10 @@ A monthly analysis of U.S. trucking prices, diesel, freight demand and capacity 
 | Can this index stand in for spot-market rates? | **No.** It correlates only 0.22 with DAT dry-van spot rates (65 months to May 2024). |
 | Is the pass-through stable? | Direction is stable in every sub-period, but size is not. After the two biggest diesel jumps, the model overshot by 1.6 points once and undershot by 2.5 points the other time. Plan with a band. |
 
+![Diesel and trucking prices, Jan 2019 to Aug 2026](outputs/01_diesel_vs_trucking_prices.png)
+
+![Month-over-month pass-through scatter](outputs/02_passthrough_scatter.png)
+
 ## Why the obvious chart is misleading
 
 Year-over-year trucking prices and year-over-year diesel correlate at **0.91**. That number looks decisive and is mostly an artifact: both series trend and overlap in time (ADF test p = 0.50 and 0.30, so neither is stationary). The analysis therefore works on month-over-month changes, which pass the stationarity test (p < 0.01), and the headline relationship drops from "explains 82%" to "explains 27%". The second number is the honest one.
@@ -31,6 +35,8 @@ Weekly diesel averaged **$6.29 in September, 15.2% above August**. The trucking 
 
 That is about **+4.8% versus August** by November. Treat September as the most reliable number. The out-of-time test supports the model for the current month only, and November rests on an assumption.
 
+![Planning estimate for Sep to Nov 2026](outputs/05_planning_estimate.png)
+
 ## Method
 
 1. **Question and scope.** Defined the decision first: a planner needs to know how fuel moves reach prices and whether other signals help.
@@ -45,8 +51,12 @@ That is about **+4.8% versus August** by November. Treat September as the most r
 
 - **Pass-through** (`n = 89` months): same-month coefficient 0.131 (p < 0.001), one-month lag 0.074 (p = 0.09), two-month lag 0.014 (p = 0.53). R² 0.27.
 - **Out-of-time test** (32 months, model refit every month): nowcast RMSE 2.18 vs 2.48 baseline; one month ahead 2.43 vs 2.52; three months ahead 2.63 vs 2.57.
+
+![Out-of-time test results](outputs/03_out_of_time_test.png)
 - **Shock events.** March 2022: diesel +26.6% in a month, trucking prices +4.3% (model predicted 5.8%). March 2026: diesel +32.2%, trucking prices +9.6% by the third month (model predicted 7.1%). Two events are too few to explain the difference, and this project does not try to.
 - **Capacity signals disagree.** Truck transportation payrolls fell from 1,588.6k (Oct 2022) to 1,470.5k (Aug 2026), down 7.4%, while new active carriers added per month rose from an average of 8,181 in 2023 to 12,276 in 2025. This is described, not explained. The data cannot say why.
+
+![Capacity signals: truck payrolls vs new carriers](outputs/04_capacity_signals.png)
 
 ## What a planner would do with this
 
